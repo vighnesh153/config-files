@@ -1,0 +1,7 @@
+*.*
+!*.sh
+!.gitignore
+!README.md
+!.gitkeep
+!.gitattributes
+
