@@ -9,5 +9,8 @@ nvm use 20
 
 # Run kotlin file with main function: "kotlinRun hello.kt"
 function kotlinRun {
-  kotlinc $1 -include-runtime -d output.jar && java -jar output.jar && rm -rf output.jar
+  TEMP_OUTPUT_FILE="$(xxd -l16 -ps /dev/urandom).jar"
+  kotlinc $1 -include-runtime -d $TEMP_OUTPUT_FILE && \
+    java -jar $TEMP_OUTPUT_FILE && \
+        rm -rf $TEMP_OUTPUT_FILE
 }
