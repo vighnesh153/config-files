@@ -18,6 +18,8 @@ Run one of the following scripts based on your OS
 
 ## Configuration
 
+### Shell configuration
+
 Add the following line based on your OS in your `.bashrc` or `.zshrc`
 
 ```sh
@@ -26,4 +28,12 @@ source ~/config-files/linux-config.sh
 
 # For MacOS
 source ~/config-files/mac-config.sh
+```
+
+### Vim configuration
+
+Add the following line to `~/.vimrc` file
+
+```vimrc
+source ~/config-files/.vimrc
 ```
