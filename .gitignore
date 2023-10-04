@@ -1,7 +1,10 @@
 *.*
 !*.sh
-!.gitignore
+!*.*rc
+
 !README.md
+
+!.gitignore
 !.gitkeep
 !.gitattributes
 
