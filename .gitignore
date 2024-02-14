@@ -7,4 +7,5 @@
 !.gitignore
 !.gitkeep
 !.gitattributes
+!.spaceshiprc.zsh
 
