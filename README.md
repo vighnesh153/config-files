@@ -1,33 +1,27 @@
 # config-files
 
+Configured only for MacOS
+
 ## Setup
 
 Clone this repository in the home (~) directory
 
 ## Install
 
-Run one of the following scripts based on your OS
+Run the following script
 
 ```sh
-# For Linux
-~/config-files/linux-install.sh
-
-# For MacOS
-~/config-files/mac-install.sh
+~/config-files/install.sh
 ```
 
 ## Configuration
 
 ### Shell configuration
 
-Add the following line based on your OS in your `.bashrc` or `.zshrc`
+Add the following line in your `.bashrc` or `.zshrc`
 
 ```sh
-# For Linux
-source ~/config-files/linux-config.sh
-
-# For MacOS
-source ~/config-files/mac-config.sh
+source ~/config-files/config.sh
 ```
 
 ### Vim configuration
