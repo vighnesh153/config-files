@@ -5,8 +5,10 @@ brew update
 # Install mise (version manager for node, python, etc)
 curl https://mise.run | sh
 
-# Install node using mise
-~/.local/bin/mise use --global node@20
+# Install tools using mise
+~/.local/bin/mise use -g node@20
+~/.local/bin/mise use -g deno@latest
+~/.local/bin/mise use -g bun@latest
 
 # install kotlin cli compiler (https://kotlinlang.org/docs/command-line.html)
 brew install kotlin
