@@ -1,6 +1,10 @@
 # config-files
 
-Configured only for MacOS
+Configured only for MacOS and Zsh
+
+## Pre-requisites
+* git should be installed
+* zsh should be the default shell: `chsh -s $(which zsh)`
 
 ## Setup
 
@@ -18,7 +22,7 @@ Run the following script
 
 ### Shell configuration
 
-Add the following line in your `.bashrc` or `.zshrc`
+Add the following line in your `.zshrc`
 
 ```sh
 source ~/config-files/config.sh
