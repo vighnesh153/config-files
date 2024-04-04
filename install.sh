@@ -9,6 +9,10 @@ export PATH="/opt/homebrew/bin:$PATH"
 echo "📦 Updating brew..."
 brew update
 
+echo "Git config"
+git config --global user.name vighnesh153
+git config --global user.email vighnesh.raut13@gmail.com
+
 # Install mise (version manager for node, python, etc)
 echo "📦 Installing Mise..."
 curl https://mise.run | sh
@@ -18,6 +22,8 @@ echo "📦 Installing Nodejs..."
 ~/.local/bin/mise use -g node@20
 echo "📦 Installing Denoland..."
 ~/.local/bin/mise use -g deno@latest
+echo "📦 Installing Java..."
+~/.local/bin/mise use -g java@openjdk-22
 
 # install kotlin cli compiler (https://kotlinlang.org/docs/command-line.html)
 echo "📦 Installing kotlin..."

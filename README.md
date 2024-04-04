@@ -3,11 +3,23 @@
 Configured only for MacOS and Zsh
 
 ## Pre-requisites
-* git should be installed
-* Install chrome manually
-* Install VS Code manually
-* Add VSCode binary to path in terminal
-* zsh should be the default shell: `chsh -s $(which zsh)`
+
+- git should be installed
+- Generate an SSH key (`ssh-keygen`) and add it to GitHub account
+- Add the following to `.ssh/config`
+
+```
+Host vighnesh153.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/<PRIVATE_KEY_FILE>
+    IdentitiesOnly yes
+```
+
+- Install chrome manually
+- Install VS Code manually
+- Add VSCode binary to path in terminal
+- zsh should be the default shell: `chsh -s $(which zsh)`
 
 ## Setup
 
@@ -20,6 +32,12 @@ Run the following script
 ```sh
 ~/config-files/install.sh
 ```
+
+## Post install
+
+- Configure iterm2
+  - Natural Text Editing: https://stackoverflow.com/a/22312856/8822610
+  - Font size: https://superuser.com/a/879409/1071147
 
 ## Configuration
 
