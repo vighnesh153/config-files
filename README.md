@@ -4,6 +4,9 @@ Configured only for MacOS and Zsh
 
 ## Pre-requisites
 * git should be installed
+* Install chrome manually
+* Install VS Code manually
+* Add VSCode binary to path in terminal
 * zsh should be the default shell: `chsh -s $(which zsh)`
 
 ## Setup
