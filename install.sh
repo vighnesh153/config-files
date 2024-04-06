@@ -1,14 +1,5 @@
 #!/bin/bash
 
-echo "📦 Install HomeBrew 🍺"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-
-# Add homebrew to path for the installation script to work
-export PATH="/opt/homebrew/bin:$PATH"
-
-echo "📦 Updating brew..."
-brew update
-
 echo "Git config"
 git config --global user.name vighnesh153
 git config --global user.email vighnesh.raut13@gmail.com
@@ -24,6 +15,21 @@ echo "📦 Installing Denoland..."
 ~/.local/bin/mise use -g deno@latest
 echo "📦 Installing Java..."
 ~/.local/bin/mise use -g java@openjdk-22
+
+echo "📦 Install HomeBrew 🍺"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+# Add homebrew to path for the installation script to work
+export PATH="/opt/homebrew/bin:$PATH"
+
+echo "📦 Updating brew..."
+brew update
+
+echo "📦 Installing Chrome..."
+brew install --cask google-chrome
+
+echo "📦 Installing VS Code..."
+brew install --cask visual-studio-code
 
 # install kotlin cli compiler (https://kotlinlang.org/docs/command-line.html)
 echo "📦 Installing kotlin..."

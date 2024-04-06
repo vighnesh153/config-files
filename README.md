@@ -4,6 +4,7 @@ Configured only for MacOS and Zsh
 
 ## Pre-requisites
 
+- zsh should be the default shell: `chsh -s $(which zsh)`
 - git should be installed
 - Generate an SSH key (`ssh-keygen`) and add it to GitHub account
 - Add the following to `.ssh/config`
@@ -15,11 +16,6 @@ Host vighnesh153.com
     IdentityFile ~/.ssh/<PRIVATE_KEY_FILE>
     IdentitiesOnly yes
 ```
-
-- Install chrome manually
-- Install VS Code manually
-- Add VSCode binary to path in terminal
-- zsh should be the default shell: `chsh -s $(which zsh)`
 
 ## Setup
 
