@@ -31,6 +31,9 @@ brew install --cask google-chrome
 echo "📦 Installing VS Code..."
 brew install --cask visual-studio-code
 
+echo "📦 Installing Docker..."
+brew install --cask docker
+
 # install kotlin cli compiler (https://kotlinlang.org/docs/command-line.html)
 echo "📦 Installing kotlin..."
 brew install kotlin
