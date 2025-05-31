@@ -10,7 +10,7 @@ curl https://mise.run | sh
 
 # Install tools using mise
 echo "📦 Installing Nodejs..."
-~/.local/bin/mise use -g node@20
+~/.local/bin/mise use -g node@latest
 echo "📦 Installing Denoland..."
 ~/.local/bin/mise use -g deno@latest
 echo "📦 Installing Java..."
