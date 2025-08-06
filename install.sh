@@ -34,6 +34,9 @@ brew install --cask visual-studio-code
 echo "📦 Installing Docker..."
 brew install --cask docker
 
+echo "📦 Installing BlueSnooze..."
+brew install bluesnooze
+
 # install kotlin cli compiler (https://kotlinlang.org/docs/command-line.html)
 echo "📦 Installing kotlin..."
 brew install kotlin
