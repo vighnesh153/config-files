@@ -60,3 +60,9 @@ echo "📦 Installing oh-my-zsh plugin: zsh-autosuggestions..."
 git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 echo "📦 Installing oh-my-zsh plugin: zsh-syntax-highlighting..."
 git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+
+# Manual installs
+# Alfred: https://www.alfredapp.com/
+# Caffeine app: https://www.caffeine-app.net/
+# IntelliJ IDEA: go/intellij-getting-started
+
