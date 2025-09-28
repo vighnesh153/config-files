@@ -20,7 +20,9 @@ echo "📦 Install HomeBrew 🍺"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # Add homebrew to path for the installation script to work
-export PATH="/opt/homebrew/bin:$PATH"
+echo >> /Users/rvighnesh/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/rvighnesh/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 echo "📦 Updating brew..."
 brew update

@@ -1,8 +1,5 @@
 #!/bin/zsh
 
-# Add homebrew to path
-export PATH="/opt/homebrew/bin:$PATH"
-
 MY_HOME=$HOME
 MY_CONFIG_FILES="$MY_HOME/config-files"
 
