@@ -52,3 +52,12 @@ Add the following line to `~/.vimrc` file
 ```vimrc
 source ~/config-files/.vimrc
 ```
+
+### AI Skills configuration
+
+Run the following command:
+
+```sh
+mkdir -p ~/.agents
+ln -s ~/config-files/skills ~/.agents/skills
+```
