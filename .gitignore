@@ -1,12 +1,11 @@
-*.*
-!*.sh
-!*.*rc
+*
 
-!README.md
-
+!skills
 !.gitignore
-!.gitkeep
-!.gitattributes
-!.spaceshiprc.zsh
-
-ai
+!.vimrc
+!config.sh
+!install.sh
+!link_ai_skills.sh
+!oh-my-zsh.sh
+!README.md
+!update_ai_skills.sh
