@@ -55,9 +55,12 @@ source ~/config-files/.vimrc
 
 ### AI Skills configuration
 
-Run the following command:
+Run the following commands in a new tab (so that `~/config-files/config.sh` is
+active).
 
 ```sh
+update_ai_skills
+
 mkdir -p ~/.agents
 ln -s ~/config-files/skills ~/.agents/skills
 ```
