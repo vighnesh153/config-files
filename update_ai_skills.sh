@@ -16,3 +16,6 @@ function cloneOrPull {
 }
 
 cloneOrPull https://github.com/Jeffallan/claude-skills.git ai/jeffallan-claude-skills
+cloneOrPull https://github.com/google-labs-code/stitch-skills.git ai/google-labs-code-stitch-skills
+cloneOrPull https://github.com/vercel-labs/agent-skills.git ai/vercel-labs-agent-skills
+cloneOrPull https://github.com/wshobson/agents.git ai/wshobson-agents

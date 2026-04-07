@@ -135,3 +135,6 @@ alias ssh-3="ssh rvighnesh-003.c.googlers.com"
 
 # Reminders
 remind_every_x_days 7 "${PIKA_COLOR_CYAN}It is time to run update AI skills by running: ${PIKA_COLOR_YELLOW}update_ai_skills${PIKA_COLOR_NO_COLOR}"
+
+# Link AI Skills
+$MY_CONFIG_FILES/link_ai_skills.sh -p $MY_CONFIG_FILES
