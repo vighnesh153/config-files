@@ -54,8 +54,13 @@ function gemini_commit() {
 }
 
 # Updates AI skills
-function update_ai_skills {
-  (cd $MY_CONFIG_FILES && ./update_ai_skills.sh)
+function update_ai_sources {
+  $MY_CONFIG_FILES/update_ai_sources.sh -p $MY_CONFIG_FILES
+
+  # Update the last updated time to reset the timer
+  local date_file="/tmp/last_ran_time_update_ai_sources.date"
+  local current_date=$(date +%s)
+  echo -e "$current_date" > "$date_file"
 }
 
 # Prints rainbow colors
@@ -67,16 +72,15 @@ function printRainbowColors {
 
 # Reminds after every x days
 #
-# Usage: remind_every_x_days <X> <MESSAGE>
+# Usage: remind_every_x_days <X> <MESSAGE> <TMP_FILE_NAME_TO_STORE_LAST_RAN_TIME>
 #
-# Example: remind_every_x_days 7 "It is time to run updater"
+# Example: remind_every_x_days 7 "It is time to run updater" /tmp/last_ran_time_update_ai_sources.date
 remind_every_x_days() {
     # Define the local file to store the timestamp
-    local urlEncodedMessage=$(node -e "console.log(\"$2\".replace(/[^a-zA-Z\s]/g, '').trim().replace(/\s+/g, '_'))")
-    local date_file="/tmp/remind_every_x_days_$urlEncodedMessage.date"
+    local date_file="$3"
 
     # 7 days in seconds
-    local seven_days_sec=$(($1 * 24 * 60 * 60)) 
+    local seven_days_sec=$(($1 * 24 * 60 * 60))
     
     # Get the current time in epoch seconds
     local current_date=$(date +%s)
@@ -97,9 +101,6 @@ remind_every_x_days() {
     # If the difference is greater than 7 days
     if [[ "$diff" -gt "$seven_days_sec" ]]; then
         echo -e "$2"
-        
-        # Write the current date to the file to reset the timer
-        echo -e "$current_date" > "$date_file"
     fi
 }
 
@@ -134,7 +135,10 @@ alias ssh-3="ssh rvighnesh-003.c.googlers.com"
 
 
 # Reminders
-remind_every_x_days 7 "${PIKA_COLOR_CYAN}It is time to run update AI skills by running: ${PIKA_COLOR_YELLOW}update_ai_skills${PIKA_COLOR_NO_COLOR}"
+remind_every_x_days \
+  7 \
+  "${PIKA_COLOR_CYAN}It is time to run update AI skills by running: ${PIKA_COLOR_YELLOW}update_ai_sources${PIKA_COLOR_NO_COLOR}" \
+  /tmp/last_ran_time_update_ai_sources.date
 
-# Link AI Skills
-$MY_CONFIG_FILES/link_ai_skills.sh -p $MY_CONFIG_FILES
+# Link AI Sources
+$MY_CONFIG_FILES/link_ai_sources.sh -p $MY_CONFIG_FILES

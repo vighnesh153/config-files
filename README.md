@@ -53,14 +53,16 @@ Add the following line to `~/.vimrc` file
 source ~/config-files/.vimrc
 ```
 
-### AI Skills configuration
+### AI configuration
 
 Run the following commands in a new tab (so that `~/config-files/config.sh` is
 active).
 
 ```sh
-update_ai_skills
+update_ai_sources
 
-mkdir -p ~/.agents
-ln -s ~/config-files/skills ~/.agents/skills
+mkdir -p ~/.gemini
+
+ln -s ~/config-files/skills ~/.gemini/skills
+ln -s ~/config-files/extensions ~/.gemini/extensions
 ```
