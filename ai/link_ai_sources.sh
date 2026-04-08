@@ -11,6 +11,13 @@ find ~/config-files/ai/skills/* -type l -exec rm -rf "{}" +
 find ~/config-files/ai/extensions/* -type d -exec rm -rf "{}" + 2>/dev/null
 
 # Link skills to correct paths
+ln -s ~/config-files/ai/sources/denoland-skills/skills/deno-deploy ~/config-files/ai/skills/denoland-skills-deno-deploy
+ln -s ~/config-files/ai/sources/denoland-skills/skills/deno-expert ~/config-files/ai/skills/denoland-skills-deno-expert
+ln -s ~/config-files/ai/sources/denoland-skills/skills/deno-frontend ~/config-files/ai/skills/denoland-skills-deno-frontend
+ln -s ~/config-files/ai/sources/denoland-skills/skills/deno-guidance ~/config-files/ai/skills/denoland-skills-deno-guidance
+ln -s ~/config-files/ai/sources/denoland-skills/skills/deno-project-templates ~/config-files/ai/skills/denoland-skills-deno-project-templates
+ln -s ~/config-files/ai/sources/denoland-skills/skills/deno-sandbox ~/config-files/ai/skills/denoland-skills-deno-sandbox
+
 ln -s ~/config-files/ai/sources/google-labs-code-stitch-skills/skills/react-components ~/config-files/ai/skills/google-labs-code-stitch-react-components
 ln -s ~/config-files/ai/sources/google-labs-code-stitch-skills/skills/enhance-prompt ~/config-files/ai/skills/google-labs-code-stitch-enhance-prompt
 

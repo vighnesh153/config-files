@@ -66,6 +66,7 @@ function fetchGeminiCliExtensionSecurity {
 
 # Only skills
 cloneOrPull https://github.com/Jeffallan/claude-skills.git ~/config-files/ai/sources/jeffallan-claude-skills
+cloneOrPull https://github.com/denoland/skills.git ~/config-files/ai/sources/denoland-skills
 cloneOrPull https://github.com/google-labs-code/stitch-skills.git ~/config-files/ai/sources/google-labs-code-stitch-skills
 cloneOrPull https://github.com/vercel-labs/agent-skills.git ~/config-files/ai/sources/vercel-labs-agent-skills
 cloneOrPull https://github.com/wshobson/agents.git ~/config-files/ai/sources/wshobson-agents
