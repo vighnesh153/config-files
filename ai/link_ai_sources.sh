@@ -41,5 +41,5 @@ function linkExtension {
 # Link extensions to correct path
 linkExtension ~/config-files/ai/sources/gemini-cli-extn-code-review ~/config-files/ai/extensions/gemini-cli-extn-code-review
 linkExtension ~/config-files/ai/sources/gemini-cli-extn-conductor ~/config-files/ai/extensions/gemini-cli-extn-conductor
-# linkExtension ~/config-files/ai/sources/gemini-cli-extn-security/dist/artifacts ~/config-files/ai/extensions/gemini-cli-extn-security
+linkExtension ~/config-files/ai/sources/gemini-cli-extn-security/dist/artifacts ~/config-files/ai/extensions/gemini-cli-extn-security
 linkExtension ~/config-files/ai/sources/obra-superpowers ~/config-files/ai/extensions/obra-superpowers

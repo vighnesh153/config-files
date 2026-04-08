@@ -3,20 +3,19 @@
 # Exit script on error
 set -e
 
-mkdir -p ai/sources
+mkdir -p ~/config-files/ai/sources
 
 source ~/config-files/env.sh
 source ~/config-files/constants.sh
 
 # cloneOrPull <GIT_URL> <LOCAL_PATH>
 function cloneOrPull {
-  if [ -e "$2" ]; then
-    echo "Found $2"
+  if [ -d "$2/.git" ]; then
     bash -c "cd $2; git pull";
-    cd
   else
     git clone $1 $2;
   fi
+  echo -e "Successfully synced ${PIKA__COLOR_GREEN}$2${PIKA__COLOR_NO_COLOR}"
 }
 
 function fetchGeminiCliExtensionSecurity {
@@ -33,7 +32,7 @@ function fetchGeminiCliExtensionSecurity {
     exit 1
   fi
   
-  local extensionPath="~/config-files/ai/sources/gemini-cli-extn-security"
+  local extensionPath=~/config-files/ai/sources/gemini-cli-extn-security
 
   cloneOrPull https://github.com/gemini-cli-extensions/security.git $extensionPath
   
@@ -41,25 +40,27 @@ function fetchGeminiCliExtensionSecurity {
   local artifactUrl="https://github.com/gemini-cli-extensions/security/releases/download/$latestTag/$artifactName"
 
   # Store extracted artifact in this this directory
-  rm -rf $extensionPath/dist
-  local artifactsDir="$extensionPath/dist/artifacts"
+  local artifactsDir=$extensionPath/dist/artifacts
   mkdir -p $artifactsDir/tmp
-  local storedVersionFile="$extensionPath/dist/version.txt"
+  local storedVersionFile=$extensionPath/dist/version.txt
   touch $storedVersionFile
 
   local storedVersion=$(cat "$storedVersionFile")
 
   if [[ "$storedVersion" == "$latestTag" ]]; then
-    echo -e "${PIKA__COLOR_GREEN}Already on latest version of gemini-cli-extensions/security. Skipping download...${PIKA__COLOR_NO_COLOR}"
+    echo -e "${PIKA__COLOR_GREEN}Already on latest version ($latestTag) of gemini-cli-extensions/security. Skipping download...${PIKA__COLOR_NO_COLOR}"
   else
+    # clean
+    rm -rf $extensionPath/dist
+    mkdir -p $artifactsDir/tmp
     # Download artifact zip into a ".../artifacts/tmp" dir
-    curl -L --output-dir "$artifactsDir/tmp" -O "$artifactUrl"
+    curl -L --output-dir $artifactsDir/tmp -O $artifactUrl
     # Extract the above artifact into ".../artifacts" dir
-    tar -xzvf "$artifactsDir/tmp/$artifactName" -C "$artifactsDir"
+    tar -xzvf $artifactsDir/tmp/$artifactName -C $artifactsDir
     # Delete the downloaded zipped artifact from ".../artifacts/tmp"
-    rm -rf "$artifactsDir/tmp"
+    rm -rf $artifactsDir/tmp
     # Save the latest version to avoid re-downloading
-    echo -e "$latestTag" > "$storedVersionFile"
+    echo -e "$latestTag" > $storedVersionFile
   fi
 }
 
