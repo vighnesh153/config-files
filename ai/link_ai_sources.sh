@@ -8,7 +8,7 @@ mkdir -p ~/config-files/ai/extensions/link2
 
 # Delete existing symlinks
 find ~/config-files/ai/skills/* -type l -exec rm -rf "{}" +
-find ~/config-files/ai/extensions/* -type d -exec rm -rf "{}" + 2>/dev/null
+find ~/config-files/ai/extensions/* -type d -exec rm -rf "{}" +
 
 # Link skills to correct paths
 ln -s ~/config-files/ai/sources/denoland-skills/skills/deno-deploy ~/config-files/ai/skills/denoland-skills-deno-deploy
