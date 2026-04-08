@@ -1,6 +1,7 @@
 *
 
 !extensions
+!policies
 !skills
 !.gitignore
 !link_ai_sources.sh

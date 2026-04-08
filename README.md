@@ -83,9 +83,11 @@ mkdir -p ~/.gemini
 # Careful!!! This will delete your existing extensions and skills.
 # Back them up or create a fork of this repo and add your extensions
 # and skills to it
-rm -rf ~/.gemini/extensions ~/.gemini/settings.json ~/.gemini/skills
+(cd ~/.gemini && \
+  rm -rf ./extensions ./policies ./settings.json ./skills)
 
 ln -s ~/config-files/ai/extensions ~/.gemini/extensions
+ln -s ~/config-files/ai/policies ~/.gemini/policies
 ln -s ~/config-files/ai/settings.json ~/.gemini/settings.json
 ln -s ~/config-files/ai/skills ~/.gemini/skills
 ```

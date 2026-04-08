@@ -1,0 +1,7 @@
+[[rule]]
+toolName = ["write_file", "replace"]
+decision = "allow"
+priority = 100
+modes = ["plan"]
+# This example matches any .md file in a .gemini/plans directory within the project.
+argsPattern = "\"file_path\":\"[^\"]+[\\\\/]+\\.gemini[\\\\/]+plans[\\\\/]+[\\w-]+\\.md\""
