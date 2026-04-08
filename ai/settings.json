@@ -1,0 +1,21 @@
+{
+  "experimental": {
+    "modelSteering": true,
+    "worktrees": true
+  },
+  "general": {
+    "enableNotifications": true,
+    "plan": {
+      "directory": ".gemini/plans"
+    }
+  },
+  "ide": {
+    "enabled": true,
+    "hasSeenNudge": true
+  },
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
+  }
+}

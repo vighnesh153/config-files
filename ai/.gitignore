@@ -1,1 +1,8 @@
-sources
+*
+
+!extensions
+!skills
+!.gitignore
+!link_ai_sources.sh
+!settings.json
+!update_ai_sources.sh
