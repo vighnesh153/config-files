@@ -2,9 +2,13 @@
 
 set -e
 
+# Hacks so that the next 2 commands don't fail
+touch /tmp/link1 && ln -s /tmp/link1 ~/config-files/ai/skills/link1
+mkdir -p ~/config-files/ai/extensions/link2
+
 # Delete existing symlinks
-find ~/config-files/ai/skills -type l -delete
-find ~/config-files/ai/extensions -type d -delete
+find ~/config-files/ai/skills/* -type l -exec rm -rf "{}" +
+find ~/config-files/ai/extensions/* -type d -exec rm -rf "{}" + 2>/dev/null
 
 # Link skills to correct paths
 ln -s ~/config-files/ai/sources/google-labs-code-stitch-skills/skills/react-components ~/config-files/ai/skills/google-labs-code-stitch-react-components
