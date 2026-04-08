@@ -75,12 +75,15 @@ source ~/config-files/.vimrc
 Run the following commands in a new tab (so that `~/config-files/config.sh` is
 active).
 
-> !Important: Update the correct
-
 ```sh
 update_ai_sources
 
 mkdir -p ~/.gemini
+
+# Careful!!! This will delete your existing extensions and skills.
+# Back them up or create a fork of this repo and add your extensions
+# and skills to it
+rm -rf ~/.gemini/skills ~/.gemini/extensions
 
 ln -s ~/config-files/ai/skills ~/.gemini/skills
 ln -s ~/config-files/ai/extensions ~/.gemini/extensions

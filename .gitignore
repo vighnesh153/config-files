@@ -10,5 +10,6 @@
 !install.sh
 !link_ai_sources.sh
 !oh-my-zsh.sh
+!periodic_update.sh
 !README.md
 !update_ai_sources.sh
