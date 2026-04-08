@@ -37,7 +37,7 @@ function gemini_commit() {
 
 # Updates AI skills
 function update_ai_sources {
-  ~/config-files/update_ai_sources.sh
+  ~/config-files/ai/update_ai_sources.sh
 
   # Update the last updated time to reset the timer
   local date_file="/tmp/last_ran_time_update_ai_sources.date"
@@ -123,4 +123,4 @@ remind_every_x_days \
   /tmp/last_ran_time_update_ai_sources.date
 
 # Link AI Sources
-~/config-files/link_ai_sources.sh
+~/config-files/ai/link_ai_sources.sh

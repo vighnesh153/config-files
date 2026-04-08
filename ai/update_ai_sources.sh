@@ -3,7 +3,7 @@
 # Exit script on error
 set -e
 
-mkdir -p ai
+mkdir -p ai/sources
 
 source ~/config-files/env.sh
 source ~/config-files/constants.sh
@@ -11,6 +11,7 @@ source ~/config-files/constants.sh
 # cloneOrPull <GIT_URL> <LOCAL_PATH>
 function cloneOrPull {
   if [ -e "$2" ]; then
+    echo "Found $2"
     bash -c "cd $2; git pull";
     cd
   else
@@ -32,11 +33,11 @@ function fetchGeminiCliExtensionSecurity {
     exit 1
   fi
   
-  local extensionPath="~/config-files/ai/gemini-cli-extn-security"
+  local extensionPath="~/config-files/ai/sources/gemini-cli-extn-security"
 
   cloneOrPull https://github.com/gemini-cli-extensions/security.git $extensionPath
   
-  local latestTag="$(cd ~/config-files/ai/gemini-cli-extn-security && git describe --tags)"
+  local latestTag="$(cd ~/config-files/ai/sources/gemini-cli-extn-security && git describe --tags)"
   local artifactUrl="https://github.com/gemini-cli-extensions/security/releases/download/$latestTag/$artifactName"
 
   # Store extracted artifact in this this directory
@@ -63,13 +64,13 @@ function fetchGeminiCliExtensionSecurity {
 }
 
 # Only skills
-cloneOrPull https://github.com/Jeffallan/claude-skills.git ~/config-files/ai/jeffallan-claude-skills
-cloneOrPull https://github.com/google-labs-code/stitch-skills.git ~/config-files/ai/google-labs-code-stitch-skills
-cloneOrPull https://github.com/vercel-labs/agent-skills.git ~/config-files/ai/vercel-labs-agent-skills
-cloneOrPull https://github.com/wshobson/agents.git ~/config-files/ai/wshobson-agents
+cloneOrPull https://github.com/Jeffallan/claude-skills.git ~/config-files/ai/sources/jeffallan-claude-skills
+cloneOrPull https://github.com/google-labs-code/stitch-skills.git ~/config-files/ai/sources/google-labs-code-stitch-skills
+cloneOrPull https://github.com/vercel-labs/agent-skills.git ~/config-files/ai/sources/vercel-labs-agent-skills
+cloneOrPull https://github.com/wshobson/agents.git ~/config-files/ai/sources/wshobson-agents
 
 # For extensions
-cloneOrPull https://github.com/gemini-cli-extensions/code-review.git ~/config-files/ai/gemini-cli-extn-code-review
-cloneOrPull https://github.com/gemini-cli-extensions/conductor.git ~/config-files/ai/gemini-cli-extn-conductor
+cloneOrPull https://github.com/gemini-cli-extensions/code-review.git ~/config-files/ai/sources/gemini-cli-extn-code-review
+cloneOrPull https://github.com/gemini-cli-extensions/conductor.git ~/config-files/ai/sources/gemini-cli-extn-conductor
 fetchGeminiCliExtensionSecurity
-cloneOrPull https://github.com/obra/superpowers.git ~/config-files/ai/obra-superpowers
+cloneOrPull https://github.com/obra/superpowers.git ~/config-files/ai/sources/obra-superpowers

@@ -34,6 +34,7 @@ Run the following script
 - Configure iterm2
   - Natural Text Editing: https://stackoverflow.com/a/22312856/8822610
   - Font size: https://superuser.com/a/879409/1071147
+  - Install Gemini CLI: https://geminicli.com/docs/get-started/installation/
 
 ## Configuration
 
@@ -81,6 +82,6 @@ update_ai_sources
 
 mkdir -p ~/.gemini
 
-ln -s ~/config-files/skills ~/.gemini/skills
-ln -s ~/config-files/extensions ~/.gemini/extensions
+ln -s ~/config-files/ai/skills ~/.gemini/skills
+ln -s ~/config-files/ai/extensions ~/.gemini/extensions
 ```
