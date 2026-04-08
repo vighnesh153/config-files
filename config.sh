@@ -1,10 +1,9 @@
 #!/bin/zsh
 
 MY_HOME=$HOME
-MY_CONFIG_FILES="$MY_HOME/config-files"
 
-source $MY_CONFIG_FILES/oh-my-zsh.sh
-source $MY_CONFIG_FILES/constants.sh
+source ~/config-files/oh-my-zsh.sh
+source ~/config-files/constants.sh
 
 alias gadog="git log --all --decorate --oneline --graph"
 
@@ -38,7 +37,7 @@ function gemini_commit() {
 
 # Updates AI skills
 function update_ai_sources {
-  $MY_CONFIG_FILES/update_ai_sources.sh -p $MY_CONFIG_FILES
+  ~/config-files/update_ai_sources.sh
 
   # Update the last updated time to reset the timer
   local date_file="/tmp/last_ran_time_update_ai_sources.date"
@@ -124,4 +123,4 @@ remind_every_x_days \
   /tmp/last_ran_time_update_ai_sources.date
 
 # Link AI Sources
-$MY_CONFIG_FILES/link_ai_sources.sh -p $MY_CONFIG_FILES
+~/config-files/link_ai_sources.sh

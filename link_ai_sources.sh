@@ -2,48 +2,33 @@
 
 set -e
 
-MY_CONFIG_PATH=''
-
-while getopts 'p:' flag; do
-  case "${flag}" in
-    p) MY_CONFIG_PATH="${OPTARG}" ;;
-    # *) echo "Unknown flag: ${OPTARG}"
-    #    exit 1 ;;
-  esac
-done
-
-if [[ -z "$MY_CONFIG_PATH" ]]; then
-  echo "-p (config-path) not provided... Unable to link ai skills."
-  exit 1
-fi
-
 # Delete existing symlinks
-find $MY_CONFIG_PATH/skills -type l -delete
-find $MY_CONFIG_PATH/extensions -type d -delete
+find ~/config-files/skills -type l -delete
+find ~/config-files/extensions -type d -delete
 
 # Link skills to correct paths
-ln -s $MY_CONFIG_PATH/ai/google-labs-code-stitch-skills/skills/react-components $MY_CONFIG_PATH/skills/google-labs-code-stitch-react-components
-ln -s $MY_CONFIG_PATH/ai/google-labs-code-stitch-skills/skills/enhance-prompt $MY_CONFIG_PATH/skills/google-labs-code-stitch-enhance-prompt
+ln -s ~/config-files/ai/google-labs-code-stitch-skills/skills/react-components ~/config-files/skills/google-labs-code-stitch-react-components
+ln -s ~/config-files/ai/google-labs-code-stitch-skills/skills/enhance-prompt ~/config-files/skills/google-labs-code-stitch-enhance-prompt
 
-ln -s $MY_CONFIG_PATH/ai/jeffallan-claude-skills/skills/cloud-architect $MY_CONFIG_PATH/skills/jeffallan-cloud-architect
-ln -s $MY_CONFIG_PATH/ai/jeffallan-claude-skills/skills/code-documenter $MY_CONFIG_PATH/skills/jeffallan-code-documenter
-ln -s $MY_CONFIG_PATH/ai/jeffallan-claude-skills/skills/debugging-wizard $MY_CONFIG_PATH/skills/jeffallan-debugging-wizard
-ln -s $MY_CONFIG_PATH/ai/jeffallan-claude-skills/skills/fullstack-guardian $MY_CONFIG_PATH/skills/jeffallan-fullstack-guardian
-ln -s $MY_CONFIG_PATH/ai/jeffallan-claude-skills/skills/javascript-pro $MY_CONFIG_PATH/skills/jeffallan-javascript-pro
-ln -s $MY_CONFIG_PATH/ai/jeffallan-claude-skills/skills/kotlin-specialist $MY_CONFIG_PATH/skills/jeffallan-kotlin-specialist
-ln -s $MY_CONFIG_PATH/ai/jeffallan-claude-skills/skills/react-expert $MY_CONFIG_PATH/skills/jeffallan-react-expert
-ln -s $MY_CONFIG_PATH/ai/jeffallan-claude-skills/skills/the-fool $MY_CONFIG_PATH/skills/jeffallan-the-fool
-ln -s $MY_CONFIG_PATH/ai/jeffallan-claude-skills/skills/typescript-pro $MY_CONFIG_PATH/skills/jeffallan-typescript-pro
+ln -s ~/config-files/ai/jeffallan-claude-skills/skills/cloud-architect ~/config-files/skills/jeffallan-cloud-architect
+ln -s ~/config-files/ai/jeffallan-claude-skills/skills/code-documenter ~/config-files/skills/jeffallan-code-documenter
+ln -s ~/config-files/ai/jeffallan-claude-skills/skills/debugging-wizard ~/config-files/skills/jeffallan-debugging-wizard
+ln -s ~/config-files/ai/jeffallan-claude-skills/skills/fullstack-guardian ~/config-files/skills/jeffallan-fullstack-guardian
+ln -s ~/config-files/ai/jeffallan-claude-skills/skills/javascript-pro ~/config-files/skills/jeffallan-javascript-pro
+ln -s ~/config-files/ai/jeffallan-claude-skills/skills/kotlin-specialist ~/config-files/skills/jeffallan-kotlin-specialist
+ln -s ~/config-files/ai/jeffallan-claude-skills/skills/react-expert ~/config-files/skills/jeffallan-react-expert
+ln -s ~/config-files/ai/jeffallan-claude-skills/skills/the-fool ~/config-files/skills/jeffallan-the-fool
+ln -s ~/config-files/ai/jeffallan-claude-skills/skills/typescript-pro ~/config-files/skills/jeffallan-typescript-pro
 
-ln -s $MY_CONFIG_PATH/ai/vercel-labs-agent-skills/skills/composition-patterns $MY_CONFIG_PATH/skills/vercel-composition-patterns
-ln -s $MY_CONFIG_PATH/ai/vercel-labs-agent-skills/skills/react-best-practices $MY_CONFIG_PATH/skills/vercel-react-best-practices
+ln -s ~/config-files/ai/vercel-labs-agent-skills/skills/composition-patterns ~/config-files/skills/vercel-composition-patterns
+ln -s ~/config-files/ai/vercel-labs-agent-skills/skills/react-best-practices ~/config-files/skills/vercel-react-best-practices
 
-ln -s $MY_CONFIG_PATH/ai/wshobson-agents/plugins/framework-migration/skills/react-modernization $MY_CONFIG_PATH/skills/wshobson-react-modernization
-ln -s $MY_CONFIG_PATH/ai/wshobson-agents/plugins/frontend-mobile-development/skills/tailwind-design-system $MY_CONFIG_PATH/skills/wshobson-tailwind-design-system
-ln -s $MY_CONFIG_PATH/ai/wshobson-agents/plugins/javascript-typescript/skills/javascript-testing-patterns $MY_CONFIG_PATH/skills/wshobson-javascript-testing-patterns
-ln -s $MY_CONFIG_PATH/ai/wshobson-agents/plugins/javascript-typescript/skills/modern-javascript-patterns $MY_CONFIG_PATH/skills/wshobson-modern-javascript-patterns
-ln -s $MY_CONFIG_PATH/ai/wshobson-agents/plugins/javascript-typescript/skills/typescript-advanced-types $MY_CONFIG_PATH/skills/wshobson-typescript-advanced-types
-ln -s $MY_CONFIG_PATH/ai/wshobson-agents/plugins/ui-design/skills/mobile-android-design $MY_CONFIG_PATH/skills/wshobson-mobile-android-design
+ln -s ~/config-files/ai/wshobson-agents/plugins/framework-migration/skills/react-modernization ~/config-files/skills/wshobson-react-modernization
+ln -s ~/config-files/ai/wshobson-agents/plugins/frontend-mobile-development/skills/tailwind-design-system ~/config-files/skills/wshobson-tailwind-design-system
+ln -s ~/config-files/ai/wshobson-agents/plugins/javascript-typescript/skills/javascript-testing-patterns ~/config-files/skills/wshobson-javascript-testing-patterns
+ln -s ~/config-files/ai/wshobson-agents/plugins/javascript-typescript/skills/modern-javascript-patterns ~/config-files/skills/wshobson-modern-javascript-patterns
+ln -s ~/config-files/ai/wshobson-agents/plugins/javascript-typescript/skills/typescript-advanced-types ~/config-files/skills/wshobson-typescript-advanced-types
+ln -s ~/config-files/ai/wshobson-agents/plugins/ui-design/skills/mobile-android-design ~/config-files/skills/wshobson-mobile-android-design
 
 
 function linkExtension {
@@ -54,7 +39,7 @@ function linkExtension {
 }
 
 # Link extensions to correct path
-linkExtension $MY_CONFIG_PATH/ai/gemini-cli-extn-code-review $MY_CONFIG_PATH/extensions/gemini-cli-extn-code-review
-linkExtension $MY_CONFIG_PATH/ai/gemini-cli-extn-conductor $MY_CONFIG_PATH/extensions/gemini-cli-extn-conductor
-linkExtension $MY_CONFIG_PATH/ai/gemini-cli-extn-security/dist/artifacts $MY_CONFIG_PATH/extensions/gemini-cli-extn-security
-linkExtension $MY_CONFIG_PATH/ai/obra-superpowers $MY_CONFIG_PATH/extensions/obra-superpowers
+linkExtension ~/config-files/ai/gemini-cli-extn-code-review ~/config-files/extensions/gemini-cli-extn-code-review
+linkExtension ~/config-files/ai/gemini-cli-extn-conductor ~/config-files/extensions/gemini-cli-extn-conductor
+linkExtension ~/config-files/ai/gemini-cli-extn-security/dist/artifacts ~/config-files/extensions/gemini-cli-extn-security
+linkExtension ~/config-files/ai/obra-superpowers ~/config-files/extensions/obra-superpowers

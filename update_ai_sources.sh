@@ -3,25 +3,10 @@
 # Exit script on error
 set -e
 
-MY_CONFIG_PATH=''
-
-while getopts 'p:' flag; do
-  case "${flag}" in
-    p) MY_CONFIG_PATH="${OPTARG}" ;;
-    # *) echo "Unknown flag: ${OPTARG}"
-    #    exit 1 ;;
-  esac
-done
-
-if [[ -z "$MY_CONFIG_PATH" ]]; then
-  echo "-p (config-path) not provided... Unable to link ai skills."
-  exit 1
-fi
-
 mkdir -p ai
 
-source $MY_CONFIG_PATH/env.sh
-source $MY_CONFIG_PATH/constants.sh
+source ~/config-files/env.sh
+source ~/config-files/constants.sh
 
 # cloneOrPull <GIT_URL> <LOCAL_PATH>
 function cloneOrPull {
@@ -47,11 +32,11 @@ function fetchGeminiCliExtensionSecurity {
     exit 1
   fi
   
-  local extensionPath="$MY_CONFIG_PATH/ai/gemini-cli-extn-security"
+  local extensionPath="~/config-files/ai/gemini-cli-extn-security"
 
   cloneOrPull https://github.com/gemini-cli-extensions/security.git $extensionPath
   
-  local latestTag="$(cd $MY_CONFIG_PATH/ai/gemini-cli-extn-security && git describe --tags)"
+  local latestTag="$(cd ~/config-files/ai/gemini-cli-extn-security && git describe --tags)"
   local artifactUrl="https://github.com/gemini-cli-extensions/security/releases/download/$latestTag/$artifactName"
 
   # Store extracted artifact in this this directory
@@ -78,13 +63,13 @@ function fetchGeminiCliExtensionSecurity {
 }
 
 # Only skills
-cloneOrPull https://github.com/Jeffallan/claude-skills.git $MY_CONFIG_PATH/ai/jeffallan-claude-skills
-cloneOrPull https://github.com/google-labs-code/stitch-skills.git $MY_CONFIG_PATH/ai/google-labs-code-stitch-skills
-cloneOrPull https://github.com/vercel-labs/agent-skills.git $MY_CONFIG_PATH/ai/vercel-labs-agent-skills
-cloneOrPull https://github.com/wshobson/agents.git $MY_CONFIG_PATH/ai/wshobson-agents
+cloneOrPull https://github.com/Jeffallan/claude-skills.git ~/config-files/ai/jeffallan-claude-skills
+cloneOrPull https://github.com/google-labs-code/stitch-skills.git ~/config-files/ai/google-labs-code-stitch-skills
+cloneOrPull https://github.com/vercel-labs/agent-skills.git ~/config-files/ai/vercel-labs-agent-skills
+cloneOrPull https://github.com/wshobson/agents.git ~/config-files/ai/wshobson-agents
 
 # For extensions
-cloneOrPull https://github.com/gemini-cli-extensions/code-review.git $MY_CONFIG_PATH/ai/gemini-cli-extn-code-review
-cloneOrPull https://github.com/gemini-cli-extensions/conductor.git $MY_CONFIG_PATH/ai/gemini-cli-extn-conductor
+cloneOrPull https://github.com/gemini-cli-extensions/code-review.git ~/config-files/ai/gemini-cli-extn-code-review
+cloneOrPull https://github.com/gemini-cli-extensions/conductor.git ~/config-files/ai/gemini-cli-extn-conductor
 fetchGeminiCliExtensionSecurity
-cloneOrPull https://github.com/obra/superpowers.git $MY_CONFIG_PATH/ai/obra-superpowers
+cloneOrPull https://github.com/obra/superpowers.git ~/config-files/ai/obra-superpowers
