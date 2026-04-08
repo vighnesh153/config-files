@@ -11,8 +11,8 @@ remind_every_x_days() {
     # Define the local file to store the timestamp
     local date_file="$3"
 
-    # 7 days in seconds
-    local seven_days_sec=$(($1 * 24 * 60 * 60))
+    # x days in seconds
+    local x_days_sec=$(($1 * 24 * 60 * 60))
     
     # Get the current time in epoch seconds
     local current_date=$(date +%s)
@@ -30,8 +30,8 @@ remind_every_x_days() {
     # Calculate the difference in seconds
     local diff=$((current_date - stored_date))
     
-    # If the difference is greater than 7 days
-    if [[ "$diff" -gt "$seven_days_sec" ]]; then
+    # If the difference is greater than x days
+    if [[ "$diff" -gt "$x_days_sec" ]]; then
         echo -e "$2"
     fi
 }
