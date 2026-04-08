@@ -4,24 +4,7 @@ MY_HOME=$HOME
 MY_CONFIG_FILES="$MY_HOME/config-files"
 
 source $MY_CONFIG_FILES/oh-my-zsh.sh
-
-PIKA_COLOR_BLACK='\033[0;30m'
-PIKA_COLOR_DARK_GRAY='\033[1;30m'
-PIKA_COLOR_RED='\033[0;31m'
-PIKA_COLOR_LIGHT_RED='\033[1;31m'
-PIKA_COLOR_GREEN='\033[0;32m'
-PIKA_COLOR_LIGHT_GREEN='\033[1;32m'
-PIKA_COLOR_BROWN='\033[0;33m'
-PIKA_COLOR_YELLOW='\033[1;33m'
-PIKA_COLOR_BLUE='\033[0;34m'
-PIKA_COLOR_LIGHT_BLUE='\033[1;34m'
-PIKA_COLOR_PURPLE='\033[0;35m'
-PIKA_COLOR_LIGHT_PURPLE='\033[1;35m'
-PIKA_COLOR_CYAN='\033[0;36m'
-PIKA_COLOR_LIGHT_CYAN='\033[1;36m'
-PIKA_COLOR_LIGHT_GRAY='\033[0;37m'
-PIKA_COLOR_WHITE='\033[1;37m'
-PIKA_COLOR_NO_COLOR='\033[0m'
+source $MY_CONFIG_FILES/constants.sh
 
 alias gadog="git log --all --decorate --oneline --graph"
 
@@ -137,7 +120,7 @@ alias ssh-3="ssh rvighnesh-003.c.googlers.com"
 # Reminders
 remind_every_x_days \
   7 \
-  "${PIKA_COLOR_CYAN}It is time to run update AI skills by running: ${PIKA_COLOR_YELLOW}update_ai_sources${PIKA_COLOR_NO_COLOR}" \
+  "${PIKA__COLOR_CYAN}It is time to run update AI skills by running: ${PIKA__COLOR_YELLOW}update_ai_sources${PIKA__COLOR_NO_COLOR}" \
   /tmp/last_ran_time_update_ai_sources.date
 
 # Link AI Sources

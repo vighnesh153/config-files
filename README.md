@@ -37,6 +37,22 @@ Run the following script
 
 ## Configuration
 
+### Customizations (ENV)
+
+Run the following command with your custom values:
+
+```sh
+touch ~/config-files/env.sh
+chmod +x ~/config-files/env.sh
+
+echo "#\!/bin/zsh
+
+# available options: mac-arm64, mac-x64, linux-x64
+PIKA__CPU_ARCH=\"mac-arm64\"
+
+" > ~/config-files/env.sh
+```
+
 ### Shell configuration
 
 Add the following line in your `.zshrc`
@@ -57,6 +73,8 @@ source ~/config-files/.vimrc
 
 Run the following commands in a new tab (so that `~/config-files/config.sh` is
 active).
+
+> !Important: Update the correct
 
 ```sh
 update_ai_sources

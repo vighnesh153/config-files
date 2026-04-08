@@ -5,8 +5,9 @@
 !.gitignore
 !.vimrc
 !config.sh
+!constants.sh
 !install.sh
-!link_ai_skills.sh
+!link_ai_sources.sh
 !oh-my-zsh.sh
 !README.md
-!update_ai_skills.sh
+!update_ai_sources.sh
