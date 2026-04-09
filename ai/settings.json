@@ -1,4 +1,11 @@
 {
+  "agents": {
+    "overrides": {
+      "browser_agent": {
+        "enabled": true
+      }
+    }
+  },
   "experimental": {
     "modelSteering": true,
     "worktrees": true
