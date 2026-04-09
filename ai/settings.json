@@ -4,6 +4,9 @@
       "browser_agent": {
         "enabled": true
       }
+    },
+    "browser": {
+      "visualModel": "gemini-2.5-computer-use-preview-10-2025"
     }
   },
   "experimental": {
@@ -24,5 +27,8 @@
     "auth": {
       "selectedType": "oauth-personal"
     }
+  },
+  "model": {
+    "name": "auto-flash-gfg"
   }
 }
