@@ -22,15 +22,16 @@ eval "$($MY_HOME/.local/bin/mise activate zsh)"
 
 # Feeds git diff to gemini to generate and apply a git commit message.
 function gemini_commit() {
-  diff=$(git diff --staged)
+  local diff="$(git diff --staged)"
+  diff="${diff:0:$PIKA__GEMINI_TOKEN_LIMIT}"
 
-  if [ -z "$diff" ]; then
+  if [ -z $diff ]; then
     echo "No staged changes to commit."
     return 1
   fi
 
   echo "Generating commit message..."
-  msg=$(echo "$diff" | gemini -p "Write a concise Conventional Commit message for this diff. Output ONLY the message.")
+  msg=$(echo $diff | gemini -p "Write a concise Conventional Commit message for this diff. Output ONLY the message.")
   echo "Generated commit message: $msg"
   git commit -m "$msg"
 }

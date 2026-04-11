@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Gemini Token Limit
+PIKA__GEMINI_TOKEN_LIMIT=$((10**6))
+
+# Colors
 PIKA__COLOR_BLACK='\033[0;30m'
 PIKA__COLOR_DARK_GRAY='\033[1;30m'
 PIKA__COLOR_RED='\033[0;31m'
