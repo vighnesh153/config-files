@@ -24,6 +24,7 @@ eval "$($MY_HOME/.local/bin/mise activate zsh)"
 function gemini_commit() {
   local diff="$(git diff --staged)"
   diff="${diff:0:$PIKA__GEMINI_TOKEN_LIMIT}"
+  local commitPrompt="Write a concise Conventional Commit message for this diff. Output strictly the raw commit message. Do not use markdown code blocks, backticks, preambles, or postambles."
 
   if [ -z $diff ]; then
     echo "No staged changes to commit."
@@ -31,7 +32,8 @@ function gemini_commit() {
   fi
 
   echo "Generating commit message..."
-  msg=$(echo $diff | gemini -p "Write a concise Conventional Commit message for this diff. Output ONLY the message.")
+  
+  msg=$(echo "$diff" | gemini -p "$commitPrompt" | grep -E '^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\(.+\))?:')
   echo "Generated commit message: $msg"
   git commit -m "$msg"
 }
