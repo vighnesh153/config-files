@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# Gemini Token Limit
-PIKA__GEMINI_TOKEN_LIMIT=$((10**6))
+# Antigravity Token Limit
+PIKA__AGY_TOKEN_LIMIT=$((10**6))
 
 # Colors
 PIKA__COLOR_BLACK='\033[0;30m'

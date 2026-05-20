@@ -2,13 +2,11 @@
 
 set -e
 
-# Hacks so that the next 2 commands don't fail
+# Hacks so that the next command doesn't fail
 touch /tmp/link1 && ln -s /tmp/link1 ~/config-files/ai/skills/link1
-mkdir -p ~/config-files/ai/extensions/link2
 
 # Delete existing symlinks
 find ~/config-files/ai/skills/* -type l -exec rm -rf "{}" +
-find ~/config-files/ai/extensions/* -type d -exec rm -rf "{}" +
 
 # Link skills to correct paths
 ln -s ~/config-files/ai/sources/denoland-skills/skills/deno-deploy ~/config-files/ai/skills/denoland-skills-deno-deploy
@@ -40,17 +38,3 @@ ln -s ~/config-files/ai/sources/wshobson-agents/plugins/javascript-typescript/sk
 ln -s ~/config-files/ai/sources/wshobson-agents/plugins/javascript-typescript/skills/modern-javascript-patterns ~/config-files/ai/skills/wshobson-modern-javascript-patterns
 ln -s ~/config-files/ai/sources/wshobson-agents/plugins/javascript-typescript/skills/typescript-advanced-types ~/config-files/ai/skills/wshobson-typescript-advanced-types
 ln -s ~/config-files/ai/sources/wshobson-agents/plugins/ui-design/skills/mobile-android-design ~/config-files/ai/skills/wshobson-mobile-android-design
-
-
-function linkExtension {
-  mkdir -p $2
-
-  local jsonContent="{\"type\": \"link\", \"source\": \"$1/\"}"
-  echo $jsonContent > $2/.gemini-extension-install.json
-}
-
-# Link extensions to correct path
-linkExtension ~/config-files/ai/sources/gemini-cli-extn-code-review ~/config-files/ai/extensions/gemini-cli-extn-code-review
-linkExtension ~/config-files/ai/sources/gemini-cli-extn-conductor ~/config-files/ai/extensions/gemini-cli-extn-conductor
-linkExtension ~/config-files/ai/sources/gemini-cli-extn-security/dist/artifacts ~/config-files/ai/extensions/gemini-cli-extn-security
-linkExtension ~/config-files/ai/sources/obra-superpowers ~/config-files/ai/extensions/obra-superpowers

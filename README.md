@@ -86,15 +86,12 @@ mkdir -p ~/.agents
 # and skills to it
 (cd ~/.agents && rm -rf ./skills)
 (cd ~/.gemini && \
-  rm -rf ./extensions ./policies ./settings.json ./skills)
+  rm -rf ./skills)
 
 # For jetski
 ln -s ~/config-files/ai/skills ~/.agents/skills
 
-# For gemini cli
-ln -s ~/config-files/ai/extensions ~/.gemini/extensions
-ln -s ~/config-files/ai/policies ~/.gemini/policies
-ln -s ~/config-files/ai/settings.json ~/.gemini/settings.json
+# For antigravity cli
 # Run either the following or the corresponding one in jetski to avoid conflicts.
-# ln -s ~/config-files/ai/skills ~/.gemini/skills
+# ln -s ~/config-files/ai/skills ~/.gemini/antigravity/skills
 ```

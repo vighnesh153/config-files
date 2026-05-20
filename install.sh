@@ -61,6 +61,9 @@ git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/z
 echo "📦 Installing oh-my-zsh plugin: zsh-syntax-highlighting..."
 git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
+# Install Antigravity CLI
+curl -fsSL https://antigravity.google/cli/install.sh | bash
+
 # Manual installs
 # Alfred: https://www.alfredapp.com/
 # Caffeine app: https://www.caffeine-app.net/

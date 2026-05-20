@@ -20,10 +20,10 @@ function kotlinRun {
 # mise config
 eval "$($MY_HOME/.local/bin/mise activate zsh)"
 
-# Feeds git diff to gemini to generate and apply a git commit message.
-function gemini_commit() {
+# Feeds git diff to antigravity cli to generate and apply a git commit message.
+function agy_commit() {
   local diff="$(git diff --staged)"
-  diff="${diff:0:$PIKA__GEMINI_TOKEN_LIMIT}"
+  diff="${diff:0:$PIKA__AGY_TOKEN_LIMIT}"
   local commitPrompt="Write a concise Conventional Commit message for this diff. Output strictly the raw commit message. Do not use markdown code blocks, backticks, preambles, or postambles."
 
   if [ -z $diff ]; then
@@ -33,7 +33,7 @@ function gemini_commit() {
 
   echo "Generating commit message..."
   
-  msg=$(echo "$diff" | gemini -p "$commitPrompt" | grep -E '^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\(.+\))?:')
+  msg=$(echo "$diff" | agy --prompt "$commitPrompt" | grep -E '^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\(.+\))?:')
   echo "Generated commit message: $msg"
   git commit -m "$msg"
 }
