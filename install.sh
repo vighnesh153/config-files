@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Git config"
+echo "🛠️ Configuring git..."
 git config --global user.name vighnesh153
 git config --global user.email vighnesh.raut13@gmail.com
 
