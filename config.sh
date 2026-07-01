@@ -79,3 +79,6 @@ alias ssh-3="ssh rvighnesh-003.c.googlers.com"
 
 # Run periodic updater
 source ~/config-files/periodic_update.sh
+
+# Initialize Android Skills
+android init
