@@ -64,6 +64,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugi
 # Install Antigravity CLI
 curl -fsSL https://antigravity.google/cli/install.sh | bash
 
+# Install Android CLI
+curl -fsSL https://dl.google.com/android/cli/latest/darwin_arm64/install.sh | bash 
+
 # Manual installs
 # Alfred: https://www.alfredapp.com/
 # Caffeine app: https://www.caffeine-app.net/
